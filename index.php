@@ -1,41 +1,87 @@
-<?php
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de inscrição</title>
+</head>
+<body>
 
-$categorias = []; 
-$categorias[] = 'infantil';
-$categorias[] = 'adolescente';
-$categorias[] = 'adulto';
-$categorias[] = 'idoso';
+    <h1>Formulario para inscrição de competidores</h1>
 
-//print_r($categorias);
+    <div class="area-formulario">
+       
+        <form class="formulario" action="script.php" method="post">
+            <p>Seu nome: <br> <input type="text" name="nome" placeholder="Insira seu nome:"/></p>
+            <p>Sua idade: <br> <input type="text" name="idade" placeholder="Insira sua idade:"/></p>
+            <p><input type="submit" value="Enviar"/></p>
+        </form> 
 
-$nome = 'Thiago';
-$idade = '19';
+    </div>
+</body>
 
+<style>
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
 
-if ($idade >= 6 && $idade <= 12)
-{
-    for ($i = 0; $i <= count($categorias); $i++)
-    {
-        if($categorias[$i] == 'infantil')
-            echo "O nadador ".$nome. " compete na categoria infantil";
-    }
 }
 
-else if($idade >= 13 && $idade <= 18)
-{
-    for ($i = 0; $i <= count($categorias); $i++)
-    {
-        if($categorias[$i] == 'adolescente')
-            echo "O nadador ".$nome. " compete na categoria adolescente";
-    }
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #9077ED;
 }
 
-else{
-    for ($i = 0; $i <= count($categorias); $i++)
-    {
-        if($categorias[$i] == 'adulto')
-            echo "O nadador ".$nome. " compete na categoria adulto";
-    }
+h1{
+    margin-top: 30px;
+    font-size: 33px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
-?>
+.area-formulario{
+    width: 400px;
+    height: 340px; border: 5px solid black;
+    display: flex;
+    margin-top: 140px;
+    background-color: #C07BE0;
+    border-radius: 8px;
+    box-shadow: 3px 6px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+input{
+    padding: 5px;
+    background-color: rgb(74, 61, 61);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 5px;
+    color: #9077ED;
+}
+input::placeholder{
+    color: #9077ED;
+}
+p{
+    margin: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+</style>
+
+
+
+
+</html>
