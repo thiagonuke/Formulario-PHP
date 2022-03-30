@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,6 +18,19 @@
     <div class="area-formulario">
        
         <form class="formulario" action="script.php" method="post">
+            <?php
+            $mensagemDeSucesso = isset($_SESSION['Mensagem de sucesso']) ? $_SESSION['Mensagem de sucesso'] : '' ;
+            if(!empty($mensagemDeSucesso))
+            {
+                echo $mensagemDeSucesso;
+            }
+
+            $mensagemDeErro = isset($_SESSION['Mensagem de erro']) ? $_SESSION['Mensagem de erro'] : '' ;
+            if(!empty($mensagemDeErro))
+            {
+                echo $mensagemDeErro;
+            }
+            ?>
             <p>Seu nome: <br> <input type="text" name="nome" placeholder="Insira seu nome:"/></p>
             <p>Sua idade: <br> <input type="text" name="idade" placeholder="Insira sua idade:"/></p>
             <p><input type="submit" value="Enviar"/></p>
